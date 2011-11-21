@@ -88,7 +88,7 @@ void IEGoal::resetFiredRules ()
     ruleItr = m_rules.begin();
 
     while ( ruleItr != m_rules.end() )
-    {			
+    {
         rule = *ruleItr++;
 
         rule->m_fired = false;

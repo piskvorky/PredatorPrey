@@ -3,7 +3,7 @@
 // author: Radim Rehurek
 // last update: 25.09.04
 //
-// generic done event 
+// generic done event
 // currently a bit of a hack, state is communicated via owner's m_done property flag
 //////////////////////////////////////////////////////////////////////////////////
 

@@ -174,8 +174,8 @@ bool CAgent::canSee(const CAgent *other) const { // FIXME LOS?
 // CAgent::setSteer
 // sets the current steering force for the agent (m / (s^2))
 ///////////////////////////////////////////////////////////////////
-void CAgent::setSteer(const Vector2d & steer) { 
+void CAgent::setSteer(const Vector2d & steer) {
 	const float MAX_FORCE = 50.0f;
-	m_steer = steer; 
+	m_steer = steer;
 	m_steer.truncate(MAX_FORCE);
 }

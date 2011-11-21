@@ -14,7 +14,7 @@
 #include "virtualtime.h"
 #include "demo.h"
 
-CGridCell::CGridCell(float grass, const float height[4]) { 
+CGridCell::CGridCell(float grass, const float height[4]) {
 	m_grass = grass;
 	float avgHeight = 0.0f;
 	for (int i = 0; i < 4; i++) {
@@ -34,7 +34,7 @@ CGridCell::CGridCell(float grass, const float height[4]) {
 void CWorld::initTerrain(int numPeaks) {
 	for (int i = 0; i < numPeaks; i++) {
 		CPeak *peak = new CPeak(Vector2d(randf(), randf()), 0.1f + randf() / 2);
-		terrain.addPeak(peak);			
+		terrain.addPeak(peak);
 	}
 }
 

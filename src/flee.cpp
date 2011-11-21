@@ -41,7 +41,7 @@ void Flee::newDirection(TVirtTime minTick) {
 	Vector2d borders = m_owner->getBordersSteer(4); // avoid getting near world borders
 
 	escape.scale(4.0);
-	separation.scale(-0.0f); 
+	separation.scale(-0.0f);
 	borders.scale(10.0f);
 
 	Vector2d dir = separation + escape + borders;

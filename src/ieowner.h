@@ -14,12 +14,12 @@ class IEOwner
 {
 
 public:
-    
+
     virtual void makeBrain () = 0;
 	virtual ~IEOwner() {}
 
     void think     ();
-    
+
     void         setName ( char * name ) { m_name = name; }
     const char * getName () { return m_name.c_str(); }
 
@@ -40,7 +40,7 @@ void name::makeBrain ()\
 
 #define GOAL(execClass)\
     exec = new execClass;\
-	ie->makeGoal(exec); 
+	ie->makeGoal(exec);
 
 #define IF(execClass)\
     exec = new execClass;\

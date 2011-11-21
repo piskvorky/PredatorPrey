@@ -36,7 +36,7 @@ private:
 
     void pushGoal  ( IEGoal * goal );
     void popGoal   ( IEGoal * goal );
-    
+
 private:
 
     std::string           m_name;

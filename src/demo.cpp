@@ -54,7 +54,7 @@ void doKeyboard(unsigned char key, int x, int y) {
         case '4' : s_bps = aminmax(0, s_bps + 1, 1000); break;
         case '5' : s_speed = aminmax(0.0f, s_speed - 0.01f, 1.0f); g_game->m_time->setSpeed(s_speed); break;
         case '6' : s_speed = aminmax(0.0f, s_speed + 0.01f, 1.0f); g_game->m_time->setSpeed(s_speed); break;
-        case '0' : delete g_game; g_game = new CGame(70 + rand(100), 15 + rand(10), 40 + rand(40), rand(2)); g_game->m_time->setSpeed(s_speed); break;
+        case '0' : delete g_game; g_game = new CGame(70 + rand(30), 15 + rand(10), 40 + rand(40), rand(2)); g_game->m_time->setSpeed(s_speed); break;
     }
 }
 
