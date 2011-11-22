@@ -235,7 +235,7 @@ void CGame::renderFrame() {
     glMatrixMode(GL_PROJECTION);
     glPushMatrix(); {
         glLoadIdentity();
-        gluPerspective(m_camera->getFOV() / 2, m_camera->getAspectRatio(), 0.0001, 100.0 );
+        gluPerspective(m_camera->getFOV() / 2, m_camera->getAspectRatio(), 0.001, 2.0 );
 
         glMatrixMode(GL_MODELVIEW);
         glPushMatrix(); {

@@ -50,15 +50,15 @@ Tested on
 Controls
 =========
 
-`1`: decrease the rendering speed (default is 40 FPS)
+`1`: decrease the rendering speed (default is 40 FPS, minimum 0 FPS)
 
 `2`: increase FPS
 
-`3`: decrease the build speed (default 20 BPS)
+`3`: decrease the build speed (default 20 BPS, min 0 BPS)
 
 `4`: increase BPS
 
-`5`: decrease simulation speed (default 0.3; minimum 0.0)
+`5`: decrease simulation speed (default 0.2; minimum 0.0)
 
 `6`: increase simulation speed
 
