@@ -10,8 +10,8 @@
 #include <cstdarg>
 
 #ifdef __APPLE__
-#import <OpenGL/gl.h>
-#import <OpenGL/glu.h>
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #include "GLUT/glut.h"
 #else
 #include "GL/glut.h"
@@ -26,7 +26,7 @@
 const float PREDATOR_SIZE = 0.005f; // predator size (in world units)
 const float PREY_SIZE = 0.003f; // prey size
 
-RECT clRect = {50, 50, 850, 850}; // initial window screen coordinates
+RECT clRect = {150, 50, 850, 850}; // initial window screen coordinates
 
 int PREDATOR_GLLIST;
 int PREY_GLLIST;
@@ -38,38 +38,27 @@ GLfloat mat_diffuse2[] = {0.50754f, 0.50754f, 0.50754f};
 GLfloat mat_shininess2[] = {128.0f * 0.8f};
 
 ///////////////////////////////////////////////////////////////////
-// CGridCell::drawCell
-// draws a single cell as a quadrilateral
-///////////////////////////////////////////////////////////////////
-void CGridCell::drawCell(float cellSize) const {
-    glColor3f(0.39f, 0.039f + m_grass * 0.78f, 0.039f);
-    glBegin(GL_QUADS); {
-        glVertex3f(0.0f, m_height[0], 0.0);
-        glVertex3f(cellSize, m_height[1], 0.0f);
-        glVertex3f(cellSize, m_height[2], cellSize);
-        glVertex3f(0.0f, m_height[3], cellSize);
-    } glEnd();
-}
-
-///////////////////////////////////////////////////////////////////
 // CWorld::drawWorld
 // draws the cells naively one after another; plenty of room for optimizations here
 ///////////////////////////////////////////////////////////////////
 void CWorld::drawWorld() const {
-    glDisable(GL_LIGHTING);
     double over = 1.0 / m_gridSize;
     double transl_y = 0.0;
     int index = 0;
+    glDisable(GL_LIGHTING);
+    glBegin(GL_QUADS);
     for (int i = 0; i < m_gridSize; i++, transl_y += over) {
         double transl_x = 0.0;
-        for (int j = 0; j < m_gridSize; j++, transl_x += over) {
-            glPushMatrix(); {
-                glTranslated(transl_x, 0.0f, transl_y);
-                cellAt(index)->drawCell(over);
-            } glPopMatrix();
-            index++;
+        for (int j = 0; j < m_gridSize; j++, transl_x += over, ++index) {
+            CGridCell const *cell = cellAt(index);
+            glColor3f(0.39f, 0.039f + cell->m_grass * 0.78f, 0.039f);
+            glVertex3f(transl_x, cell->m_height[0], transl_y);
+            glVertex3f(transl_x + over, cell->m_height[1], transl_y);
+            glVertex3f(transl_x + over, cell->m_height[2], transl_y + over);
+            glVertex3f(transl_x, cell->m_height[3], transl_y + over);
         }
     }
+    glEnd();
     glEnable(GL_LIGHTING);
 }
 
@@ -142,7 +131,7 @@ void doMouseMove(int x, int y) {
             break;
         case CAMERA_ZOOM:
             {
-                cam_distance = aminmax(0.1f, cam_distance - MOUSE_ZOOMSENS * mouseDiff.m_y, 1.0f);
+                cam_distance = aminmax(0.1f, cam_distance - MOUSE_ZOOMSENS * mouseDiff.m_y, 1.1f);
             }
             break;
         default:
