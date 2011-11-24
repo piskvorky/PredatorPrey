@@ -16,11 +16,11 @@
 // CPredator::CPredator
 ///////////////////////////////////////////////////////////////////
 CPredator::CPredator() {
-	initialize();
-	m_sight = 0.25f;
-	m_walkSpeed = 0.08f;
-	m_runSpeed = 0.9f;
-	m_type = PREDATOR;
+    initialize();
+    m_sight = 0.25f;
+    m_walkSpeed = 0.08f;
+    m_runSpeed = 0.9f;
+    m_type = PREDATOR;
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -28,8 +28,8 @@ CPredator::CPredator() {
 // things that must be done every frame
 ///////////////////////////////////////////////////////////////////
 int CPredator::processAgentConstant() {
-	move();
-	return 0;
+    move();
+    return 0;
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -39,9 +39,9 @@ int CPredator::processAgentConstant() {
 // should not otherwise interfere with the simulation
 ///////////////////////////////////////////////////////////////////
 int CPredator::processAgentPeriodic() {
-	think();
-	m_lastUpdate = g_game->m_time->tickNow();
-	return 0;
+    think();
+    m_lastUpdate = g_game->m_time->tickNow();
+    return 0;
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -49,8 +49,8 @@ int CPredator::processAgentPeriodic() {
 // the speed at which agent burns out stamina (directly proportional to current velocity)
 ///////////////////////////////////////////////////////////////////
 float CPredator::getStaminaBurnSpeed() const {
-	if (this->getSpeed() < (this->m_walkSpeed + this->m_runSpeed) / 2)
-		return -1.0f;
-	else
-		return +1.0f;
+    if (this->getSpeed() < (this->m_walkSpeed + this->m_runSpeed) / 2)
+        return -1.0f;
+    else
+        return +1.3f;
 }

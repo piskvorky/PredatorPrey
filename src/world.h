@@ -5,15 +5,13 @@
 #include <list>
 #include "demo.h"
 
-class CGridCell {
-private:
+struct CGridCell {
     float m_drop;
     float m_height[4];
     float m_grass;
-public:
+
     CGridCell(float grass, const float height[4]);
     void addGrass(float diff) { m_grass = aminmax(0.0f, m_grass + diff, 1.0f); }
-    void drawCell(float cellSize) const; // defined in gfx.cpp
 
     inline float getGrass() const { return m_grass; }
     inline float getDrop() const { return m_drop; }
@@ -71,8 +69,8 @@ public:
     }
     inline int isTile(const Vector2d &pos) const {
         assert(pos.m_x >= 0 && pos.m_x <= 1 && pos.m_y >= 0 && pos.m_y <= 1);
-        int posX = (int)(pos.m_x * m_gridSize);
-        int posY = (int)(pos.m_y * m_gridSize);
+        int posX = aminmax(0, (int)(pos.m_x * m_gridSize), m_gridSize - 1);
+        int posY = aminmax(0, (int)(pos.m_y * m_gridSize), m_gridSize - 1);
         return indexAt(posX, posY);
     }
     inline Vector2d isWorldPos(int index) const {
