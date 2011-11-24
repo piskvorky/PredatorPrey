@@ -24,7 +24,9 @@ Pro Tip
 =======
 
 View the world directly from above, zoom out and keep pressing `0` (random world reset) until you get a world with no predators.
-Then increase the simulation speed to 1.0 and just watch the hordes of unchallenged prey roam the world, making it barren (the grass they eat doesn't grow back).
+Then increase the simulation speed to 1.0 and just watch the hordes of prey roam the world, making it barren (the grass they eat doesn't grow back).
+
+The boid model is just mesmerizing.
 
 ![prey roam](http://radimrehurek.com/roam.png)
 
@@ -50,15 +52,15 @@ Tested on
 Controls
 =========
 
-`1`: decrease the rendering speed (default is 40 FPS, minimum 0 FPS)
+`1`: decrease the rendering speed (default is 60 FPS, minimum 0 FPS)
 
 `2`: increase FPS
 
-`3`: decrease the build speed (default 20 BPS, min 0 BPS)
+`3`: decrease the build speed (default 40 BPS, min 0 BPS)
 
 `4`: increase BPS
 
-`5`: decrease simulation speed (default 0.2; minimum 0.0)
+`5`: decrease simulation speed (default 0.3; minimum 0.0)
 
 `6`: increase simulation speed
 
