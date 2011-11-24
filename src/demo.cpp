@@ -7,8 +7,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 #ifdef __APPLE__
-#import <OpenGL/gl.h>
-#import <OpenGL/glu.h>
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #include "GLUT/glut.h"
 #else
 #include "GL/glut.h"
@@ -20,9 +20,9 @@
 #include "world.h"
 #include "demo.h"
 
-int s_fps = 40; // desired initial frame rate
-int s_bps = 20; // desired initial build rate
-float s_speed = 0.2f; // initial simulation speed
+int s_fps = 60; // desired initial frame rate
+int s_bps = 40; // desired initial build rate
+float s_speed = 0.3f; // initial simulation speed
 
 const int WORLD_GRANULARITY = 70;
 const int WORLD_PEAKS = 20;
@@ -54,6 +54,7 @@ void doKeyboard(unsigned char key, int x, int y) {
         case '4' : s_bps = aminmax(0, s_bps + 1, 1000); break;
         case '5' : s_speed = aminmax(0.0f, s_speed - 0.01f, 1.0f); g_game->m_time->setSpeed(s_speed); break;
         case '6' : s_speed = aminmax(0.0f, s_speed + 0.01f, 1.0f); g_game->m_time->setSpeed(s_speed); break;
+        case '9' : delete g_game; g_game = new CGame(50, 15, 1, 0); s_speed=1.0f; g_game->m_time->setSpeed(s_speed); break;
         case '0' : delete g_game; g_game = new CGame(70 + rand(30), 15 + rand(10), 40 + rand(40), rand(2)); g_game->m_time->setSpeed(s_speed); break;
     }
 }
