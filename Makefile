@@ -1,6 +1,6 @@
 SOURCES = src/*.cpp
 CC = g++
-CFLAGS = -O2 -Wall -DNDEBUG
+CFLAGS = -O2 -Wall -DNDEBUG -ansi -pedantic
 UNAME := $(shell uname)
 EXEC = predator_prey
 
