@@ -26,28 +26,27 @@ Pro Tip
 View the world directly from above, zoom out and keep pressing `0` (random world reset) until you get a world with no predators.
 Then increase the simulation speed to 1.0 and just watch the hordes of prey roam the world, making it barren (the grass they eat doesn't grow back).
 
-The boid model is just mesmerizing.
+**The boid model is just mesmerizing.** I could watch it for hours :)
 
 ![prey roam](http://radimrehurek.com/roam.png)
 
 Install
 =======
 
-I created this little demo 7 years ago, when researching some AI game technologies.
-It was created using Microsoft Visual Studio 7.0.
-I don't have MVS anymore, so I hacked the code to compile under Linux and OS X as well (with a few `#ifdef`s).
+Under **Linux or OS X**, just type `make`. Make sure you have the [OpenGL Utility Toolkit](http://www.opengl.org/resources/libraries/glut/) installed (OS X has it by default, in some Linuxes you have to `apt-get install libglut3-dev` or equivalent).
 
-Under Linux or OS X, just type `make`. Make sure you have the [OpenGL Utility Toolkit](http://www.opengl.org/resources/libraries/glut/) installed (OS X has it by default, in some Linuxes you have to `apt-get install libglut3-dev` or equivalent).
-
-Under Windows, either use the VS project files in folder `build_windows` or just run the already-compiled executable there.
+Under **Windows**, either use the VS project files in folder `build_windows` or just run the already-compiled executable there.
 I also included `glut32.dll` in `build_windows`, in case your Windows didn't come with the [OpenGL Utility Toolkit](http://www.opengl.org/resources/libraries/glut/).
-The windows version was compiled more than 7 years ago, so please don't ask me for support :-)
 
 Tested on
 
 * Ubuntu with gcc 4.4.3
 * OS X 10.5.8 with gcc 4.0.1
 * Windows XP with VS 7.0 (~7 years ago)
+
+I created this little demo 7 years ago, when researching some AI game technologies.
+It was created using Microsoft Visual Studio 7.0.
+I don't have MVS anymore, so I hacked the code to compile under Linux and OS X as well (with a few `#ifdef`s).
 
 Controls
 =========
@@ -69,4 +68,3 @@ Controls
 `mouse`: change view+zoom in/out
 
 `esc`: exit the application
-
