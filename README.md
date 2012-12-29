@@ -65,6 +65,6 @@ Tested on
 * OS X 10.5.8 with gcc 4.0.1
 * Windows XP with VS 7.0 (~7 years ago)
 
-I created this little demo 7 years ago, when researching some AI game technologies.
+I created this little demo 7 years ago (in 2004), when researching some AI game technologies.
 It was created using Microsoft Visual Studio 7.0.
-I don't have MVS anymore, so I hacked the code to compile under Linux and OS X as well (with a few `#ifdef`s).
+I don't have MVS anymore, so I gently hacked the code to compile under Linux and OS X as well (with a few `#ifdef`s).
