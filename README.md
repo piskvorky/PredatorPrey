@@ -61,10 +61,10 @@ I also included `glut32.dll` in `build_windows`, in case your Windows didn't com
 
 Tested on
 
-* Ubuntu with gcc 4.4.3
-* OS X 10.5.8 with gcc 4.0.1
-* Windows XP with VS 7.0 (~7 years ago)
+* Ubuntu with gcc 4.4.3 (2011)
+* OS X 10.5.8 with gcc 4.0.1 (2011)
+* Windows XP with VS 7.0 (2004)
 
-I created this little demo 7 years ago (in 2004), when researching some AI game technologies.
-It was created using Microsoft Visual Studio 7.0.
-I don't have MVS anymore, so I gently hacked the code to compile under Linux and OS X as well (with a few `#ifdef`s).
+The demo was created using Microsoft Visual Studio 7.0. I don't have MVS anymore, so I gently hacked the code to compile under Linux and OS X as well (with a few `#ifdef`s) in 2011.
+
+**I created this little demo ages ago (in 2004), when researching some AI game technologies. Don't expect any updates or support here.**
