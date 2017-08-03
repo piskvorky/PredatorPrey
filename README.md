@@ -54,14 +54,14 @@ Controls
 Install
 =======
 
-Under **Linux or OS X**, just type `make`. Make sure you have the [OpenGL Utility Toolkit](http://www.opengl.org/resources/libraries/glut/) installed (OS X has it by default, in some Linuxes you have to `apt-get install libglut3-dev` or equivalent).
+Under **Linux or OS X**, just type `make`. Make sure you have the [OpenGL Utility Toolkit](http://www.opengl.org/resources/libraries/glut/) installed (OS X has it by default, in some Linuxes you have to `apt-get install freeglut3-dev` or equivalent).
 
 Under **Windows**, either use the VS project files in folder `build_windows` or just run the already-compiled executable there.
 I also included `glut32.dll` in `build_windows`, in case your Windows didn't come with the [OpenGL Utility Toolkit](http://www.opengl.org/resources/libraries/glut/).
 
 Tested on
 
-* Ubuntu with gcc 4.4.3 (2011)
+* Ubuntu (16.04) with gcc 5.4.0 (2017)
 * OS X 10.5.8 with gcc 4.0.1 (2011)
 * Windows XP with VS 7.0 (2004)
 
