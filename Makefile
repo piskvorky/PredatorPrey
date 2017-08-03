@@ -13,7 +13,7 @@ ifeq ($(UNAME),Darwin)
 endif
 
 all:
-	$(CC) $(CFLAGS) $(LIBRARIES) $(SOURCES) -o $(EXEC)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(EXEC) $(LIBRARIES)
 
 clean:
 	rm $(EXEC)
